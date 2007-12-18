@@ -3,29 +3,18 @@ Version: 2.2.1
 Release: %mkrel 2
 Summary: X.org input driver for Citron Infrared Touch (CiTouch) devices
 Group: Development/X11
-
 URL: http://xorg.freedesktop.org
-# Note: using tag citron-2_2_0
 ########################################################################
 # git clone git://git.mandriva.com/people/pcpa/xorg/drivers/xf86-input-citron xorg/drivers/xf86-input-citron
 # cd xorg/drivers/xf86-input-citron
-# git-archive --format=tar --prefix=xf86-input-citron-2.2.1/ citron-2_2_0 | bzip2 -9 > xf86-input-citron-2.2.1.tar.bz2
+# git-archive --format=tar --prefix=xf86-input-citron-2.2.1/ xf86-input-citron-2.2.1 | bzip2 -9 > xf86-input-citron-2.2.1.tar.bz2
 ########################################################################
 Source0: xf86-input-citron-%{version}.tar.bz2
-
 License: MIT
 
-# Note: generating diff from tag citron-2_2_0
 ########################################################################
-# git-format-patch citron-2_2_0..origin/mandriva+gpl
-Patch1: 0001-Replace-references-to-XFree86-XF86Config-in-man-page.patch
-Patch2: 0002-renamed-.cvsignore-.gitignore.patch
-Patch3: 0003-Define-CITOUCH_VERSION-using-PACKAGE_VERSION.patch
-Patch4: 0004-Move-from-TSCalibrationCtl-to-AbsCalibCtl-requires.patch
-Patch5: 0005-Bumped-version-to-2.2.1.patch
-Patch6: 0006-Added-some-more-patterns-to-.gitignore.patch
-Patch7: 0007-Generate-ChangeLog-from-git.patch
-Patch8: 0008-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
+# git-format-patch xf86-input-citron-2.2.1..origin/mandriva+gpl
+Patch1: 0001-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
 ########################################################################
 
 BuildRequires: x11-proto-devel >= 1.4
@@ -43,13 +32,6 @@ present due to X Input Hotplug rework.
 %setup -q -n xf86-input-citron-%{version}
 
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p1
-%patch5 -p1
-%patch6 -p1
-%patch7 -p1
-%patch8 -p1
 
 %build
 autoreconf -ifs
