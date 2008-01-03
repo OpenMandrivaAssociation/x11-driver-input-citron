@@ -18,7 +18,6 @@ Patch1: 0001-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
 BuildRequires: x11-proto-devel >= 1.4
 BuildRequires: x11-server-devel >= 1.4
 BuildRequires: x11-util-macros >= 1.1.5-4mdk
-BuildRequires: x11-util-modular
 Conflicts: x11-server < 1.4
 
 %description
@@ -40,6 +39,7 @@ autoreconf -ifs
 %install
 rm -rf %{buildroot}
 %makeinstall_std
+rm -f %{buildroot}/%{_libdir}/xorg/modules/input/*.la
 
 %clean
 rm -rf %{buildroot}
