@@ -14,8 +14,9 @@ URL: http://xorg.freedesktop.org
 Source0: xf86-input-citron-%{version}.tar.bz2
 License: MIT
 ########################################################################
-# git-format-patch xf86-input-citron-2.2.1..origin/mandriva+gpl
+# git-format-patch xf86-input-citron-2.2.1..origin/mandriva+custom
 Patch1: 0001-Update-for-new-policy-of-hidden-symbols-and-common-m.patch
+Patch2: 0002-Don-t-call-missing-functions-xf86SoundKbdBell-and-xf.patch
 ########################################################################
 BuildRequires: x11-util-macros		>= 1.1.5-4mdk
 #BuildRequires: gcc			>= 4.2.2
@@ -27,14 +28,12 @@ Conflicts: x11-server < 1.4
 
 %description
 Citron is a Xorg input driver for Citron Infrared Touch devices (CiTouch).
-THIS DRIVER IS BROKEN:
-Missing symbols xf86SoundKbdBell and xf86XInputSetSendCoreEvents no longer
-present due to X Input Hotplug rework.
 
 %prep
 %setup -q -n xf86-input-citron-%{version}
 
 %patch1 -p1
+%patch2 -p1
 
 %build
 autoreconf -ifs
