@@ -1,8 +1,6 @@
-%define debug_package	%{nil}
-
 Name: x11-driver-input-citron
 Version: 2.2.1
-Release: %mkrel 2
+Release: %mkrel 3
 Summary: X.org input driver for Citron Infrared Touch (CiTouch) devices
 Group: Development/X11
 URL: http://xorg.freedesktop.org
