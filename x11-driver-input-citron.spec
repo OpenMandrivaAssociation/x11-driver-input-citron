@@ -12,7 +12,6 @@ BuildRequires: x11-server-devel >= 1.4
 BuildRequires: x11-util-macros >= 1.0.1
 Conflicts: x11-server < 1.4
 
-Patch1: 0001-Don-t-call-missing-functions-xf86SoundKbdBell-and-xf.patch
 
 %description
 Citron is a Xorg input driver for Citron Infrared Touch devices (CiTouch).
@@ -20,7 +19,6 @@ Citron is a Xorg input driver for Citron Infrared Touch devices (CiTouch).
 %prep
 %setup -q -n xf86-input-citron-%{version}
 
-%patch1 -p1
 
 %build
 %configure2_5x
