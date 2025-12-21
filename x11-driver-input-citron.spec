@@ -7,6 +7,11 @@ URL: https://xorg.freedesktop.org
 Source: http://xorg.freedesktop.org/releases/individual/driver/xf86-input-citron-%{version}.tar.bz2
 License: MIT
 BuildRoot: %{_tmppath}/%{name}-root
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: x11-proto-devel >= 1.4
 BuildRequires: x11-server-devel >= 1.4
 BuildRequires: x11-util-macros >= 1.0.1
